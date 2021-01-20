@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <%- include('partials/cdn.html') -%>
+    <title>Stack automata</title>
+</head>
+
+<body>
+    <div id="input">
+        <form action="http://localhost:3000/get_data" method="POST">
+            <h4>Porfavor inserta una cadena de 0 y 1</h4>
+            <input type="text" name="dinput" id="idInput">
+            <button type="submit">Aceptar</button>
+            <button type="button" onclick="randomString()">Auto generar</button>
+        </form>
+    </div>
+    <div id="stackAnimation">
+        <h1>
+            Stack animation
+        </h1>
+    </div>
+    <script>
+        function randomString(){
+            let randomNumber= Math.floor(Math.random() * 100001);
+            let stringToSet = "";
+            
+            for(let i = 0; i<randomNumber; i++){
+                stringToSet+="0";   
+            }
+            for(let i = 0; i<randomNumber; i++){
+                stringToSet+="1";       
+            }
+            document.getElementById('idInput').value = stringToSet;
+        }
+    </script>
+</body>
+
+</html>
