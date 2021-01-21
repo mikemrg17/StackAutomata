@@ -1,6 +1,6 @@
 class Stack{
     constructor(){
-        this.items = {};
+        this.items = [];
         this.top = 0;
     };
 
@@ -17,6 +17,19 @@ class Stack{
             this.top--;
             return deletedItem;
         }
+    }
+
+    print(){
+        let dataString = "";
+        for(let i = 0; i<this.top; i++){
+            dataString+= this.items[i];
+        }
+        console.log(dataString);
+        return dataString;
+    }
+
+    getSize(){
+        return this.top;
     }
 }
 

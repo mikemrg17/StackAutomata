@@ -10,6 +10,9 @@ app.set('view engine', 'ejs');
 //routes
 app.use(require(`./routes/routes.js`));
 
+//static files
+app.use(express.static(`${__dirname}/public`));
+
 app.listen(app.get(`port`), ()=>{
     console.log(`Server on port: ${app.get(`port`)}`);
 });
